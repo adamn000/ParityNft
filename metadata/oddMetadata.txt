@@ -1,0 +1,12 @@
+var fs = require('fs');
+
+for (var i = 0; i < 25; i++) {
+    var json = {}
+    json.name = "Token #" + i;
+    json.description = "This token was minted in odd block and has number #" + i;
+    json.image = "ipfs://bafkreic2jrj7dlmo7tgv6cfgnz44dsdszvatt3scemfntkjkb7wegoydja";
+    
+    fs.writeFileSync('' + i, JSON.stringify(json));
+}
+
+ipfs://bafybeiguli4bb6pnajengyo5t2sg6hrqk7xgt525rbdwu7vnnfwmqaa35y

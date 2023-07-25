@@ -116,6 +116,14 @@ contract ParityNft is ERC721A, Ownable {
         isMintOpen = false;
     }
 
+    function setEvenBaseUri(string memory evenBaseTokenURI) external onlyOwner {
+        s_evenBaseTokenURI = evenBaseTokenURI;
+    }
+
+    function setOddBaseUri(string memory oddBaseTokenURI) external onlyOwner {
+        s_oddBaseTokenURI = oddBaseTokenURI;
+    }
+
     /////////////
     // Getter //
     ///////////

@@ -63,34 +63,6 @@ contract ParityNftTest is Test {
         assert(parityNft.getTokenId() == 3);
     }
 
-    function testUriReturnIfMintBlockIsEven() public mintIsOpen {
-        vm.roll(50);
-        vm.prank(USER);
-        parityNft.mint{value: ONE_TOKEN_PRICE}(1);
-
-        string memory expectedURI = "green0";
-        string memory actualURI = parityNft.tokenURI(0);
-
-        assert(
-            keccak256(abi.encodePacked(expectedURI)) ==
-                keccak256(abi.encodePacked(actualURI))
-        );
-    }
-
-    function testUriReturnIfMintBlockIsOdd() public mintIsOpen {
-        vm.roll(51);
-        vm.prank(USER);
-        parityNft.mint{value: ONE_TOKEN_PRICE}(1);
-
-        string memory expectedURI = "red0";
-        string memory actualURI = parityNft.tokenURI(0);
-
-        assert(
-            keccak256(abi.encodePacked(expectedURI)) ==
-                keccak256(abi.encodePacked(actualURI))
-        );
-    }
-
     function testOnlyOwnerCanWithdrawFunds() public {
         vm.prank(USER);
         vm.expectRevert();

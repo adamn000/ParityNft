@@ -1,0 +1,12 @@
+var fs = require('fs');
+
+for (var i = 0; i < 25; i++) {
+    var json = {}
+    json.name = "Token #" + i;
+    json.description = "This token was minted in even block and has number #" + i;
+    json.image = "ipfs://bafkreidqk753xtiovbxyt4xk4aigirt5pvg4axhfqx4jgmkxebmkokm53u";
+    
+    fs.writeFileSync('' + i, JSON.stringify(json));
+}
+
+ipfs://bafybeif4eecbys25sikzeihipuejskhraj5mmpvx7w7mm7m4abirkfqhdi
